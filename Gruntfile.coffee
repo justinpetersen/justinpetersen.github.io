@@ -99,7 +99,7 @@ module.exports = (grunt)->
         interrupt: true
 
       jade:
-        files: ['<%= yeoman.app %>/templates/{,**/}*.jade']
+        files: ['<%= yeoman.app %>/{,**/}*.jade']
         tasks: ['jade:dist']
 
       coffee:
@@ -191,9 +191,9 @@ module.exports = (grunt)->
           pretty: true
         files: [
           expand: true
-          cwd: '<%= yeoman.app %>/templates/'
+          cwd: '<%= yeoman.app %>'
           src: ['**/*.jade']
-          dest: '<%= yeoman.tmp %>/templates'
+          dest: '<%= yeoman.tmp %>'
           ext: '.html'
         ]
 
