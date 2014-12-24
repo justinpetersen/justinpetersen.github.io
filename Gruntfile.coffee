@@ -54,6 +54,7 @@ module.exports = (grunt)->
   grunt.loadNpmTasks('grunt-contrib-copy')
   grunt.loadNpmTasks('grunt-contrib-cssmin')
   grunt.loadNpmTasks('grunt-contrib-htmlmin')
+  grunt.loadNpmTasks('grunt-contrib-jade')
   grunt.loadNpmTasks('grunt-contrib-imagemin')
   grunt.loadNpmTasks('grunt-contrib-uglify')
   grunt.loadNpmTasks('grunt-contrib-requirejs')
@@ -97,6 +98,10 @@ module.exports = (grunt)->
       options:
         interrupt: true
 
+      jade:
+        files: ['<%= yeoman.app %>/templates/{,**/}*.jade']
+        tasks: ['jade:dist']
+
       coffee:
         files: ['<%= yeoman.src %>/coffee/{,**/}*.coffee']
         tasks: ['coffee:dist']
@@ -107,7 +112,7 @@ module.exports = (grunt)->
 
       files:
         files: [
-          '<%= yeoman.tmp %>/{,**/}*.{css,js}'
+          '<%= yeoman.tmp %>/{,**/}*.{html,css,js}'
           '<%= yeoman.app %>/{,**/}*.html'
           '<%= yeoman.app %>/css/{,**/}*.css'
           '<%= yeoman.app %>/js/{,**/}*.js'
@@ -179,6 +184,18 @@ module.exports = (grunt)->
       components: ['<%= yeoman.dist %>/components']
       templates: ['<%= yeoman.dist %>/templates']
       spec: ['<%= yeoman.dist %>/js/spec']
+
+    jade:
+      dist:
+        options:
+          pretty: true
+        files: [
+          expand: true
+          cwd: '<%= yeoman.app %>/templates/'
+          src: ['**/*.jade']
+          dest: '<%= yeoman.tmp %>/templates'
+          ext: '.html'
+        ]
 
     coffee:
       dist:
@@ -367,6 +384,7 @@ module.exports = (grunt)->
   ])
 
   grunt.registerTask('compile', [
+    'jade:dist'
     'coffee:dist'
     'compass:server'
     'less:dist'
@@ -376,6 +394,7 @@ module.exports = (grunt)->
     'clean:dist'
     'clean:tmp'
     'clean:tmp_dist'
+    'jade:dist'
     'coffee'
     'compass:dist'
     'less:dist'
