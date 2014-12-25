@@ -48,7 +48,7 @@ module.exports = (grunt)->
   grunt.loadNpmTasks('grunt-contrib-clean')
   grunt.loadNpmTasks('grunt-contrib-coffee')
   grunt.loadNpmTasks('grunt-contrib-compass')
-  grunt.loadNpmTasks('grunt-contrib-less')
+  # grunt.loadNpmTasks('grunt-contrib-less')
   grunt.loadNpmTasks('grunt-contrib-concat')
   grunt.loadNpmTasks('grunt-contrib-connect')
   grunt.loadNpmTasks('grunt-contrib-copy')
@@ -153,7 +153,7 @@ module.exports = (grunt)->
               require('connect-livereload')(port: yeomanConfig.livereload_port)
               fileHTMLRewriter
                 snippet: [
-                  "<!-- Test snippet -->",
+                  "<!-- Test snippet-->",
                   "<script src=\"components/mocha/mocha.js\"></script>",
                   "<link rel=\"stylesheet\" href=\"components/mocha/mocha.css\">",
                   "<script>",
@@ -161,7 +161,7 @@ module.exports = (grunt)->
                   "</script>",
                   ""
                 ].join('\n')
-                regex: /<!-- Test snippet -->/
+                regex: /<!-- Test snippet-->/
               mountFolder(connect, yeomanConfig.test)
               mountFolder(connect, yeomanConfig.tmp)
               mountFolder(connect, yeomanConfig.app)
@@ -231,19 +231,6 @@ module.exports = (grunt)->
         options:
           debugInfo: true
 
-    less:
-      server:
-        options:
-          dumpLineNumbers: 'all'
-        files:
-            '<%= yeoman.tmp %>/css/all-less.css' : '<%= yeoman.app %>/components/bootstrap/less/{bootstrap,responsive}.less'
-
-      dist:
-        options:
-          compress: true
-          yuicompress: true
-        files:
-            '<%= yeoman.tmp %>/css/all-less.css' : '<%= yeoman.app %>/components/bootstrap/less/{bootstrap,responsive}.less'
     kss:
       options:
         template: '<%= yeoman.src %>/styleguide'
@@ -352,7 +339,6 @@ module.exports = (grunt)->
     'coffee:dist'
     'coffeecov:dist'
     'compass:server'
-    'less:server'
     'connect:test'
     'mocha'
   ])
@@ -360,7 +346,6 @@ module.exports = (grunt)->
   grunt.registerTask('server', [
     'coffee:dist'
     'compass:server'
-    'less:server'
     'kss'
     'connect:server'
     'open:server'
@@ -371,7 +356,6 @@ module.exports = (grunt)->
     'coffee:dist'
     'coffeecov:dist'
     'compass:server'
-    'less:server'
     'connect:test'
     'open:test'
     'watch'
@@ -387,7 +371,6 @@ module.exports = (grunt)->
     'jade:dist'
     'coffee:dist'
     'compass:server'
-    'less:dist'
   ])
 
   grunt.registerTask('build', [
@@ -397,7 +380,6 @@ module.exports = (grunt)->
     'jade:dist'
     'coffee'
     'compass:dist'
-    'less:dist'
     'copy:dist'
     'connect:test'
     'mocha'

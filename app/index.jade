@@ -6,23 +6,35 @@ html(class="no-js")
     meta(name="description", content="Justin Petersen is a Creative Technologist living in San Francisco, California.")
     meta(name="viewport", content="width=device-width")
 
-    // build:css css/all.css 
-    link(rel="stylesheet", type="text/css", href="css/all-less.css")
+    // build:css css/all.css
     link(rel="stylesheet", type="text/css", href="css/main.css")
-    // endbuild 
+    // endbuild
 
   body
-    #total Loading...
 
-    // build:js js/all.js 
+
+    .container
+      .navbar.navbar-inverse
+        ul.nav.navbar-nav
+          li
+            a(href="#") Portfolio
+          li
+            a(href="#") Skills
+          li
+            a(href="#") Contact
+
+    .container
+      #total Loading...
+
+    // build:js js/all.js
     script(src="components/raphael/raphael.js")
     script(src="components/requirejs/require.js")
     script(src="js/main.js")
-    // endbuild 
+    // endbuild
 
-    // Test snippet 
+    // Test snippet
 
-    // Google Analytics: change UA-XXXXX-X to be your site's ID. 
+    // Google Analytics: change UA-XXXXX-X to be your site's ID.
     script
       | var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
       | (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];

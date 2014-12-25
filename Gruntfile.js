@@ -61,7 +61,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-coffee');
   grunt.loadNpmTasks('grunt-contrib-compass');
-  grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-copy');
@@ -151,8 +150,8 @@ module.exports = function(grunt) {
               require('connect-livereload')({
                 port: yeomanConfig.livereload_port
               }), fileHTMLRewriter({
-                snippet: ["<!-- Test snippet -->", "<script src=\"components/mocha/mocha.js\"></script>", "<link rel=\"stylesheet\" href=\"components/mocha/mocha.css\">", "<script>", "    window.is_test = true;", "</script>", ""].join('\n'),
-                regex: /<!-- Test snippet -->/
+                snippet: ["<!-- Test snippet-->", "<script src=\"components/mocha/mocha.js\"></script>", "<link rel=\"stylesheet\" href=\"components/mocha/mocha.css\">", "<script>", "    window.is_test = true;", "</script>", ""].join('\n'),
+                regex: /<!-- Test snippet-->/
               }), mountFolder(connect, yeomanConfig.test), mountFolder(connect, yeomanConfig.tmp), mountFolder(connect, yeomanConfig.app)
             ];
           }
@@ -235,25 +234,6 @@ module.exports = function(grunt) {
       server: {
         options: {
           debugInfo: true
-        }
-      }
-    },
-    less: {
-      server: {
-        options: {
-          dumpLineNumbers: 'all'
-        },
-        files: {
-          '<%= yeoman.tmp %>/css/all-less.css': '<%= yeoman.app %>/components/bootstrap/less/{bootstrap,responsive}.less'
-        }
-      },
-      dist: {
-        options: {
-          compress: true,
-          yuicompress: true
-        },
-        files: {
-          '<%= yeoman.tmp %>/css/all-less.css': '<%= yeoman.app %>/components/bootstrap/less/{bootstrap,responsive}.less'
         }
       }
     },
@@ -381,11 +361,11 @@ module.exports = function(grunt) {
       return grunt.config(['coffee', 'dist', 'src'], [filepath.replace("" + yeomanConfig.src + "/coffee/", "")]);
     }
   });
-  grunt.registerTask('test', ['coffee:dist', 'coffeecov:dist', 'compass:server', 'less:server', 'connect:test', 'mocha']);
-  grunt.registerTask('server', ['coffee:dist', 'compass:server', 'less:server', 'kss', 'connect:server', 'open:server', 'watch']);
-  grunt.registerTask('server-test', ['coffee:dist', 'coffeecov:dist', 'compass:server', 'less:server', 'connect:test', 'open:test', 'watch']);
+  grunt.registerTask('test', ['coffee:dist', 'coffeecov:dist', 'compass:server', 'connect:test', 'mocha']);
+  grunt.registerTask('server', ['coffee:dist', 'compass:server', 'kss', 'connect:server', 'open:server', 'watch']);
+  grunt.registerTask('server-test', ['coffee:dist', 'coffeecov:dist', 'compass:server', 'connect:test', 'open:test', 'watch']);
   grunt.registerTask('server-dist', ['connect:dist', 'open:dist', 'watch:files']);
-  grunt.registerTask('compile', ['jade:dist', 'coffee:dist', 'compass:server', 'less:dist']);
-  grunt.registerTask('build', ['clean:dist', 'clean:tmp', 'clean:tmp_dist', 'jade:dist', 'coffee', 'compass:dist', 'less:dist', 'copy:dist', 'connect:test', 'mocha', 'requirejs:compile', 'useminPrepare', 'imagemin', 'htmlmin', 'concat', 'usemin', 'cssmin', 'clean:tmp_dist', 'clean:components', 'clean:templates', 'clean:spec', 'uglify']);
+  grunt.registerTask('compile', ['jade:dist', 'coffee:dist', 'compass:server']);
+  grunt.registerTask('build', ['clean:dist', 'clean:tmp', 'clean:tmp_dist', 'jade:dist', 'coffee', 'compass:dist', 'copy:dist', 'connect:test', 'mocha', 'requirejs:compile', 'useminPrepare', 'imagemin', 'htmlmin', 'concat', 'usemin', 'cssmin', 'clean:tmp_dist', 'clean:components', 'clean:templates', 'clean:spec', 'uglify']);
   return grunt.registerTask('default', ['build']);
 };
