@@ -8,6 +8,7 @@ $icon-font-path: "../components/bootstrap-sass-official/vendor/assets/fonts/boot
 body
   font-family: 'Vollkorn', serif
   font-size: 16px
+  padding-top: 70px
 
 p
   margin: 0
@@ -18,6 +19,9 @@ h1, h2, h3, h4, h5, h6
   font-family: 'Roboto Condensed', sans-serif
   letter-spacing: 0.5px
 
+h2
+  line-height: 1.5
+
 .center
   margin-left: auto
   margin-right: auto
@@ -26,9 +30,9 @@ h1, h2, h3, h4, h5, h6
   text-align: center
 
 .outer-shadow
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1)
-  -moz-box-shadow: 0 2px 8px rgba(0,0,0,0.1)
-  -webkit-box-shadow: 0 2px 8px rgba(0,0,0,0.1)
+  box-shadow: 0 2px 5px rgba(0,0,0,0.5)
+  -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.5)
+  -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.5)
 
 .loading-container
   height: 800px
@@ -44,19 +48,28 @@ h1, h2, h3, h4, h5, h6
   margin-top: 20px
 
 .navbar
-  border-radius: 0
-  height: 150px
+  height: 100px
   margin-bottom: 0
+  border-radius: 0
 
   .brand-logo
-    width: 100px
-    height: 100px
-    margin-top: 10px
+    float: left
+    width: 70px
+    height: 70px
     background-image: url(../images/jp-logo.png)
+    background-size: contain
+
+  .brand-name
+    float: left
+    margin-left: 20px
+    margin-top: 12px
+
+    p
+      font-size: 15px
 
   .navbar-nav
     float: right
-    padding-top: 47px
+    margin-top: 23px
 
   li
     font-family: 'Roboto Condensed', sans-serif
@@ -65,3 +78,15 @@ h1, h2, h3, h4, h5, h6
 
 .navbar-inverse
   background: #000
+
+  .navbar-brand
+    color: #fff
+
+  .navbar-nav
+    li
+      a
+        color: #fff
+        text-decoration: none
+
+      &:hover
+        text-decoration: underline
