@@ -37,7 +37,7 @@ html(class="no-js")
           li
             a(href="#") Contact
 
-    .container-fluid.about-container.inner-shadow
+    .container-fluid.about-container
       .container
         .row
           .col-xs-5
@@ -46,10 +46,6 @@ html(class="no-js")
           .col-xs-7.about-copy-container
             h2.
               I want to work with smart and creative people to&nbsp;make interactive products that users find entertaining, beautiful and useful.
-            p.icons-container
-              span.glyphicon.glyphicon-send &nbsp;
-              span.glyphicon.glyphicon-user &nbsp;
-              img.icon-image(src="images/linkedin-icon.png")
 
     #total
       .container
@@ -57,6 +53,21 @@ html(class="no-js")
           .col-xs-12.loading-container Loading...
 
     .container-fluid.footer-container
+      .container
+        .row
+          .col-xs-12.center-text
+            h4
+              a(href="mailto:justin@justinpetersen.com") justin@justinpetersen.com
+            p.icons-container
+              a(href="https://www.linkedin.com/in/justinpete", target="_blank")
+                button.btn.btn-xs.btn-primary.icon-button(type="button")
+                  img.icon-image(src="images/linkedin-icon.png")
+              a(href="https://github.com/justinpetersen", target="_blank")
+                button.btn.btn-xs.btn-success.icon-button(type="button")
+                  img.icon-image(src="images/github-icon.png")
+              a(href="#")
+                button.btn.btn-xs.btn-danger.icon-button(type="button")
+                  img.icon-image(src="images/resume-icon.png")
 
     // build:js js/all.js
     script(src="components/raphael/raphael.js")
