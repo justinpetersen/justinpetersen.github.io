@@ -1,0 +1,93 @@
+doctype html
+html(class="no-js")
+  head
+    meta(charset="utf-8")
+    title Justin Petersen
+    meta(name="description", content="Justin Petersen is a Creative Technologist living in San Francisco, California.")
+    meta(name="viewport", content="width=device-width")
+
+    link(href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Vollkorn:400italic,700italic,400,700", rel="stylesheet", type="text/css")
+
+    // build:css css/all.css
+    link(rel="stylesheet", type="text/css", href="css/main.css")
+    // endbuild
+
+  body
+
+    .modal.fade#videoModal(tabindex="-1", role="dialog", aria-hidden="true")
+      .modal-dialog.modal-lg
+        .video-player-container
+          .close-video-modal-button.hidden-xs
+            span.glyphicon.glyphicon-remove
+          iframe.vimeo-player(src="//player.vimeo.com/video/84931542?title=0&byline=0&portrait=0&color=ef3f3d", allowfullscreen)
+    .modal.fade#haloReachModal(tabindex="-2", role="dialog", aria-hidden="true")
+      .modal-dialog.modal-lg
+        .video-player-container
+          .close-video-modal-button.hidden-xs
+            span.glyphicon.glyphicon-remove
+          iframe.vimeo-player(src="//player.vimeo.com/video/19136630?title=0&byline=0&portrait=0&color=ef3f3d", allowfullscreen)
+
+    .navbar.navbar-fixed-top.navbar-inverse
+      .container
+        .navbar-header
+          a.navbar-brand(href="#")
+            .brand-logo
+            .brand-name
+              h3 Justin Petersen
+              p Creative Technologist
+        ul.nav.navbar-nav.hidden-xs
+          li
+            a(href="#") About
+          li
+            a(href="#work") Work
+          li
+            a(href="#contact") Contact
+
+    .container-fluid.about-container
+      .container
+        .row
+          .col-xs-12.col-sm-5
+            .img-profile-container.center
+              img.img-circle.img-profile(src="https://media.licdn.com/mpr/mpr/shrink_200_200/p/8/000/1f0/172/0531c92.jpg", alt="Justin Petersen")
+          .col-xs-12.col-sm-7.about-copy-container
+            h2.
+              I want to work with smart and creative people to&nbsp;make interactive products that users find entertaining, beautiful and useful.
+            a(name="work")
+
+    #total
+      .container
+        .row
+          .col-xs-12.loading-container Loading...
+
+    a(name="contact")
+    .container-fluid.footer-container
+      .container
+        .row
+          .col-xs-12.center-text
+            h4
+              a(href="mailto:justin@justinpetersen.com") justin@justinpetersen.com
+            p.icons-container
+              a(href="https://www.linkedin.com/in/justinpete", target="_blank")
+                button.btn.btn-xs.btn-primary.icon-button(type="button")
+                  img.icon-image(src="images/linkedin-icon.png")
+              a(href="https://github.com/justinpetersen", target="_blank")
+                button.btn.btn-xs.btn-success.icon-button(type="button")
+                  img.icon-image(src="images/github-icon.png")
+              a(href="downloads/Justin_Petersen_Resume_2014-04-09.pdf", target="_blank")
+                button.btn.btn-xs.btn-danger.icon-button(type="button")
+                  img.icon-image(src="images/resume-icon.png")
+
+    // build:js js/all.js
+    script(src="components/raphael/raphael.js")
+    script(src="components/requirejs/require.js")
+    script(src="js/main.js")
+    // endbuild
+
+    // Test snippet
+
+    // Google Analytics: change UA-XXXXX-X to be your site's ID.
+    script
+      | var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+      | (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      | g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      | s.parentNode.insertBefore(g,s)}(document,'script'));
