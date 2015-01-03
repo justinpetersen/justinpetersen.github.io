@@ -9,6 +9,13 @@
   .row.body-p
     .col-xs-12.col-sm-5
       img.work-image(src="images/projects/audi.png")
+      .icons-container
+        a(href="http://www.audiusa.com", target="_blank")
+          button.btn.btn-xs.btn-danger.icon-button(type="button")
+            img.icon-image(src="images/link-icon.png")
+        a(href="#", data-toggle="modal", data-target="#videoModal")
+          button.btn.btn-xs.btn-info.icon-button(type="button")
+            img.icon-image(src="images/video-icon.png")
     .col-xs-12.col-sm-7
       h3 AudiUSA.com
       p.body-p.
@@ -57,6 +64,10 @@
   .row.content-container
     .col-xs-12.col-sm-5
       img.work-image(src="https://s-media-cache-ak0.pinimg.com/736x/42/8e/34/428e344039efe2fa105be49b7f4ab54d.jpg")
+      .icons-container
+        a(href="http://work.akqa.com/xbox/dc2/index.html", target="_blank")
+          button.btn.btn-xs.btn-danger.icon-button(type="button")
+            img.icon-image(src="images/link-icon.png")
     .col-xs-12.col-sm-7
       h3 Dance*Cam
       p.body-p.
@@ -102,7 +113,11 @@
 .container
   .row.content-container
     .col-xs-12.col-sm-5
-      img.work-image(src="https://s-media-cache-ak0.pinimg.com/236x/dc/9a/f7/dc9af7cb3cac2c7d0289cf0894b26e50.jpg")
+      img.work-image(src="images/projects/halo-reach.jpg")
+      .icons-container
+        a(href="#", data-toggle="modal", data-target="#haloReachModal")
+          button.btn.btn-xs.btn-info.icon-button(type="button")
+            img.icon-image(src="images/video-icon.png")
     .col-xs-12.col-sm-7
       h3 Remember Reach
       p.body-p.
@@ -147,7 +162,61 @@
       p Here are more projects that I did as a Senior Creative Developer and Creative Development Manager at AKQA and EVB. 
       hr
 
-  .row.body-p
+.container
+  .row
+    .col-xs-12.col-sm-4
+      img.work-image(src="https://s-media-cache-ak0.pinimg.com/736x/16/80/5d/16805d49d30b09927408a239bc7e3074.jpg")
+      h3.copy-container Kinect Me
+      p.body-p.
+        The Xbox “Kinect Me” site was created to complement the Kinect for Xbox 360 global tour. It was featured in the 2011 Communication Arts Interactive Annual.
+      h5.body-p Role
+      p
+        small.
+          Technical Manager
+      h5.body-p Recognition
+      p
+        small.
+          Communication Arts Interactive Annual
+      p
+        small.
+          Mi6 Most Creative New Product Announcement
+      p
+        small.
+          Webby Awards Official Honoree
+    .col-xs-12.col-sm-4
+      img.work-image(src="https://s-media-cache-ak0.pinimg.com/236x/fc/db/74/fcdb746999c28e6acb89b5faf6f3753e.jpg")
+      h3.copy-container Alan Wake
+      p.body-p.
+        The Alan Wake "Reveal" take-over ad allowed users to use their mobile device as a flashlight to reveal scenes from the game in a web ad.
+      h5.body-p Role
+      p
+        small.
+          Technical Manager
+      h5.body-p Recognition
+      p
+        small.
+          Mi6 Bronze for Best Online Take-over
+      p
+        small.
+          Webby Awards Official Honoree
+    .col-xs-12.col-sm-4
+      img.work-image(src="https://s-media-cache-ak0.pinimg.com/736x/6f/92/c6/6f92c6708cbac71f355d3e22d09ccf7b.jpg")
+      h3.copy-container Halo 3: ODST
+      p.body-p.
+        The Halo 3: ODST website was one of the first examples of Silverlight Smooth Streaming video technology, which enabled the nonlinear video navigation and multi-dimensional storytelling.
+      h5.body-p Role
+      p
+        small.
+          Technical Manager
+      h5.body-p Recognition
+      p
+        small.
+          Mi6 Award for Best Online Advertising Campaign
+      p
+        small.
+          Best Online Advertising Campaign
+
+  .row.content-container
     .col-xs-12.col-sm-4
       img.work-image(src="https://s-media-cache-ak0.pinimg.com/736x/6f/db/64/6fdb6484286be71a9e2e84e8d10e488b.jpg")
       h3.copy-container Gears of War 2
@@ -225,57 +294,3 @@
       p
         small.
           FWA Site of the Day, FITC Toronto 2007, San Francisco Silver ADDY, Cannes Lion Finalist, SXSW Finalist, Adobe Site of the Day
-
-.container
-  .row.content-container
-    .col-xs-12.col-sm-4
-      img.work-image(src="https://s-media-cache-ak0.pinimg.com/736x/16/80/5d/16805d49d30b09927408a239bc7e3074.jpg")
-      h3.copy-container Kinect Me
-      p.body-p.
-        The Xbox “Kinect Me” site was created to complement the Kinect for Xbox 360 global tour. It was featured in the 2011 Communication Arts Interactive Annual.
-      h5.body-p Role
-      p
-        small.
-          Technical Manager
-      h5.body-p Recognition
-      p
-        small.
-          Communication Arts Interactive Annual
-      p
-        small.
-          Mi6 Most Creative New Product Announcement
-      p
-        small.
-          Webby Awards Official Honoree
-    .col-xs-12.col-sm-4
-      img.work-image(src="https://s-media-cache-ak0.pinimg.com/236x/fc/db/74/fcdb746999c28e6acb89b5faf6f3753e.jpg")
-      h3.copy-container Alan Wake
-      p.body-p.
-        The Alan Wake "Reveal" take-over ad allowed users to use their mobile device as a flashlight to reveal scenes from the game in a web ad.
-      h5.body-p Role
-      p
-        small.
-          Technical Manager
-      h5.body-p Recognition
-      p
-        small.
-          Mi6 Bronze for Best Online Take-over
-      p
-        small.
-          Webby Awards Official Honoree
-    .col-xs-12.col-sm-4
-      img.work-image(src="https://s-media-cache-ak0.pinimg.com/736x/6f/92/c6/6f92c6708cbac71f355d3e22d09ccf7b.jpg")
-      h3.copy-container Halo 3: ODST
-      p.body-p.
-        The Halo 3: ODST website was one of the first examples of Silverlight Smooth Streaming video technology, which enabled the nonlinear video navigation and multi-dimensional storytelling.
-      h5.body-p Role
-      p
-        small.
-          Technical Manager
-      h5.body-p Recognition
-      p
-        small.
-          Mi6 Award for Best Online Advertising Campaign
-      p
-        small.
-          Best Online Advertising Campaign
