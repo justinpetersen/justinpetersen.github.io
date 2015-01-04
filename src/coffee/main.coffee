@@ -31,7 +31,7 @@ requirejs.config
 
 require ['app/vendors'], ->
 
-  require ['app/app', 'jquery', 'bootstrap-modal', 'bootstrap-transition'], (App, $) ->
+  require ['app/app', 'jquery'], (App, $) ->
     App.initialize()
 
     if window.is_test
