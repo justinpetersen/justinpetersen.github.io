@@ -8,6 +8,11 @@ html(class="no-js")
 
     link(href="http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Vollkorn:400italic,700italic,400,700", rel="stylesheet", type="text/css")
 
+    // build:js js/all.js
+    script(src="components/requirejs/require.js")
+    script(src="js/main.js")
+    // endbuild
+
     // build:css css/all.css
     link(rel="stylesheet", type="text/css", href="css/main.css")
     // endbuild
@@ -54,10 +59,302 @@ html(class="no-js")
               I want to work with smart and creative people to&nbsp;make interactive products that users find entertaining, beautiful and useful.
             a(name="work")
 
-    #total
-      .container
-        .row
-          .col-xs-12.loading-container Loading...
+    .container
+      .row.content-container
+        .col-xs-12
+          h2 Featured Projects
+          p These are my favorite recent projects from my time at AKQA. As Associate Director of Creative Development, I was responsible for creative development for leading brands including Anheuser-Busch, Activision, Audi, Xbox and Target.
+          hr
+
+    .container
+      .row.body-p
+        .col-xs-12.col-sm-5
+          img.work-image(src="images/projects/audi.png")
+          .icons-container
+            a(href="http://www.audiusa.com", target="_blank")
+              button.btn.btn-xs.btn-danger.icon-button(type="button")
+                img.icon-image(src="images/link-icon.png")
+            a(href="#", data-toggle="modal", data-target="#videoModal")
+              button.btn.btn-xs.btn-info.icon-button(type="button")
+                img.icon-image(src="images/video-icon.png")
+        .col-xs-12.col-sm-7
+          h3 AudiUSA.com
+          p.body-p.
+            I oversaw front end development of the AudiUSA.com site redesign, especially focusing on the car configurator and global UI components. The site is fully responsive and includes several integrations with Audi's global data partners.
+          table.table.body-p
+            tr
+              td
+                h5 Client
+                p
+                  small Audi
+              td
+                h5 Agency
+                p
+                  small AKQA
+              td
+                h5 Role
+                p
+                  small Technical Manager
+            tr
+              td(colspan="3")
+                h5 Technologies
+                p
+                  small Adobe CQ5, Adobe Scene7, CoffeeScript, Bootstrap, Backbone.js, Jenkins, Predictive Analytics
+            tr
+              td(colspan="3")
+                h5 Highlights
+                p
+                  small Managed a global front-end development team; interfaced with Audi data partners in Germany.
+                p
+                  small Experience with test-driven development and continuous integration pipline.
+                p
+                  small Site contains complex Adobe CQ5 and Scene7 integration.
+                p
+                  small Site uses predictive analytics to optimize content for the user.
+            tr
+              td(colspan="3")
+                h5 Recognition
+                p
+                  small Webby Awards Official Honoree: Mobile Sites & Apps: Best Practices
+                p
+                  small FWA Site of the Day
+                p
+                  small FWA Mobile Site of the Day
+
+    .container
+      .row.content-container
+        .col-xs-12.col-sm-5
+          img.work-image(src="https://s-media-cache-ak0.pinimg.com/736x/42/8e/34/428e344039efe2fa105be49b7f4ab54d.jpg")
+          .icons-container
+            a(href="http://work.akqa.com/xbox/dc2/index.html", target="_blank")
+              button.btn.btn-xs.btn-danger.icon-button(type="button")
+                img.icon-image(src="images/link-icon.png")
+        .col-xs-12.col-sm-7
+          h3 Dance*Cam
+          p.body-p.
+            I managed creative development of the Dance*Cam iPhone, Android and Windows Phone 7 app for Dance Central 2. The mobile app ran Adobe After Effects in Microsoft's Azure cloud to add special effects and "auto-tune" the user into their very own music video.
+          table.table.body-p
+            tr
+              td
+                h5 Client
+                p
+                  small Xbox
+              td
+                h5 Agency
+                p
+                  small AKQA and Fuzz Productions
+              td
+                h5 Role
+                p
+                  small Technical Manager
+            tr
+              td(colspan="3")
+                h5 Technologies
+                p
+                  small After Effects, Azure, Windows Phone, Android, iOS
+            tr
+              td(colspan="3")
+                h5 Highlights
+                p
+                  small Managed mobile development through an external development partner.
+                p
+                  small Users can challenge each other to dance battles with videos posted on Facebook.
+                p
+                  small Music videos are generated in the cloud, using Adobe AfterEffects running on Microsoft Azure.
+            tr
+              td(colspan="3")
+                h5 Recognition
+                p
+                  small ONE SHOW Entertainment Bronze
+                p
+                  small Cannes Mobile Shortlist
+                p
+                  small NEXT Mobile AICP Shortlist
+
+    .container
+      .row.content-container
+        .col-xs-12.col-sm-5
+          img.work-image(src="images/projects/halo-reach.jpg")
+          .icons-container
+            a(href="#", data-toggle="modal", data-target="#haloReachModal")
+              button.btn.btn-xs.btn-info.icon-button(type="button")
+                img.icon-image(src="images/video-icon.png")
+        .col-xs-12.col-sm-7
+          h3 Remember Reach
+          p.body-p.
+            The Halo "Remember Reach" site used an automobile assembly robot with a laser pointer to create a monument from 60,000 points of light. Each user could select a single points of light, which would in turn be illuminated by the robot and composited into the scene. The activity of the robot was live-streamed over the website for the duration of the campaign.
+          table.table.body-p
+            tr
+              td
+                h5 Client
+                p
+                  small Xbox
+              td
+                h5 Agency
+                p
+                  small AKQA and Autofuss
+              td
+                h5 Role
+                p
+                  small Technical Manager
+            tr
+              td(colspan="3")
+                h5 Technologies
+                p
+                  small Silverlight, C#.NET, After Effects, Kuka Robotics, Live Smooth Streaming
+            tr
+              td(colspan="3")
+                h5 Highlights
+                p
+                  small Site used Microsoft's Smooth Streaming video technology to live-stream the robot activity.
+                p
+                  small I designed the algorithms for users selecting points of light and the constellation fade routine.
+            tr
+              td(colspan="3")
+                h5 Recognition
+                p
+                  small.
+                    One Show Interactive Silver, One Show Interactive Bronze, Tomorrow Awards Gold, London International Awards Gold, ADDY Gold, BIG Star Awards Best Online Creative, New York Festivals Gold, Art Directors Club Awards Merit, Webby Awards Official Honoree
+
+    .container
+      .row.content-container
+        .col-xs-12
+          h2 More Work
+          p Here are more projects that I did as a Senior Creative Developer and Creative Development Manager at AKQA and EVB. 
+          hr
+
+    .container
+      .row
+        .col-xs-12.col-sm-4
+          img.work-image(src="https://s-media-cache-ak0.pinimg.com/736x/16/80/5d/16805d49d30b09927408a239bc7e3074.jpg")
+          h3.copy-container Kinect Me
+          p.body-p.
+            The Xbox “Kinect Me” site was created to complement the Kinect for Xbox 360 global tour. It was featured in the 2011 Communication Arts Interactive Annual.
+          h5.body-p Role
+          p
+            small.
+              Technical Manager
+          h5.body-p Recognition
+          p
+            small.
+              Communication Arts Interactive Annual
+          p
+            small.
+              Mi6 Most Creative New Product Announcement
+          p
+            small.
+              Webby Awards Official Honoree
+        .col-xs-12.col-sm-4
+          img.work-image(src="https://s-media-cache-ak0.pinimg.com/236x/fc/db/74/fcdb746999c28e6acb89b5faf6f3753e.jpg")
+          h3.copy-container Alan Wake
+          p.body-p.
+            The Alan Wake "Reveal" take-over ad allowed users to use their mobile device as a flashlight to reveal scenes from the game in a web ad.
+          h5.body-p Role
+          p
+            small.
+              Technical Manager
+          h5.body-p Recognition
+          p
+            small.
+              Mi6 Bronze for Best Online Take-over
+          p
+            small.
+              Webby Awards Official Honoree
+        .col-xs-12.col-sm-4
+          img.work-image(src="https://s-media-cache-ak0.pinimg.com/736x/6f/92/c6/6f92c6708cbac71f355d3e22d09ccf7b.jpg")
+          h3.copy-container Halo 3: ODST
+          p.body-p.
+            The Halo 3: ODST website was one of the first examples of Silverlight Smooth Streaming video technology, which enabled the nonlinear video navigation and multi-dimensional storytelling.
+          h5.body-p Role
+          p
+            small.
+              Technical Manager
+          h5.body-p Recognition
+          p
+            small.
+              Mi6 Award for Best Online Advertising Campaign
+          p
+            small.
+              Best Online Advertising Campaign
+
+      .row.content-container
+        .col-xs-12.col-sm-4
+          img.work-image(src="https://s-media-cache-ak0.pinimg.com/736x/6f/db/64/6fdb6484286be71a9e2e84e8d10e488b.jpg")
+          h3.copy-container Gears of War 2
+          p.body-p.
+            I was the lead Flash developer of the Gears of War 2 Flash site.
+          h5.body-p Role
+          p
+            small.
+              Front-End Developer/Architect
+          h5.body-p Recognition
+          p
+            small.
+              Bronze CLIO
+          p
+            small.
+              One Show Short List
+          p
+            small.
+              Mi6 Gold
+        .col-xs-12.col-sm-4
+          img.work-image(src="https://s-media-cache-ak0.pinimg.com/736x/1e/5e/1b/1e5e1b627ec7156858c0474bfbc40a0f.jpg")
+          h3.copy-container Target Weekly Ad
+          p.body-p.
+            I was the Creative Development Manager for the online Target Weekly Ad in 2010. The site allowed users to share, comment on and "love" products, set up email and SMS alerts and explore product recommendations based on Facebook "Likes."
+          h5.body-p Role
+          p
+            small.
+              Technical Manager
+        .col-xs-12.col-sm-4
+          img.work-image(src="https://s-media-cache-ak0.pinimg.com/736x/1c/24/68/1c246846ed32efa983192eefd7f7f9af.jpg")
+          h3.copy-container Target Black Friday
+          p.body-p.
+            I led development of Target's "Giftacular" augmented reality sweepstakes. The user could spin the wheel of gifts with their Target print ad in order to win coupons for Black Friday.
+          h5.body-p Role
+          p
+            small.
+              Technical Manager and Front-End Developer
+
+      .row.content-container
+        .col-xs-12.col-sm-4
+          img.work-image(src="https://s-media-cache-ak0.pinimg.com/736x/73/f1/bf/73f1bfb35672bebbca02a86b860f5038.jpg")
+          h3.copy-container Criss Angel
+          p.body-p.
+            Nearly three million people visited and sent the customized Criss Angel video prank. I developed the PHP back-end service that assembled audio and video snippets into a cohesive video that seemed magically created just for them.
+          h5.body-p Role
+          p
+            small.
+              Full-Stack Developer/Architect
+        .col-xs-12.col-sm-4
+          img.work-image(src="https://s-media-cache-ak0.pinimg.com/736x/02/90/08/0290088fc392c79821b5f3586069ff70.jpg")
+          h3.copy-container Adidas Basketball
+          p.body-p.
+            I was the lead frontend developer for the adidas "Believe in 5IVE" site.
+          h5.body-p Role
+          p
+            small.
+              Front-End Developer/Architect
+          h5.body-p Recognition
+          p
+            small.
+              FWA Site of the Day
+          p
+            small.
+              San Francisco Silver ADDY
+        .col-xs-12.col-sm-4
+          img.work-image(src="https://s-media-cache-ak0.pinimg.com/236x/1b/5b/78/1b5b7849fc03174142c5b6c96c0a3a86.jpg")
+          h3.copy-container Orbit Friends of Bright
+          p.body-p.
+            While at EVB, I was the lead developer of the "Friends of Bright" site for Wrigley.
+          h5.body-p Role
+          p
+            small.
+              Full-Stack Developer/Architect
+          h5.body-p Recognition
+          p
+            small.
+              FWA Site of the Day, FITC Toronto 2007, San Francisco Silver ADDY, Cannes Lion Finalist, SXSW Finalist, Adobe Site of the Day
 
     a(name="contact")
     .container-fluid.footer-container
@@ -76,12 +373,6 @@ html(class="no-js")
               a(href="downloads/Justin_Petersen_Resume_2014-04-09.pdf", target="_blank")
                 button.btn.btn-xs.btn-danger.icon-button(type="button")
                   img.icon-image(src="images/resume-icon.png")
-
-    // build:js js/all.js
-    script(src="components/raphael/raphael.js")
-    script(src="components/requirejs/require.js")
-    script(src="js/main.js")
-    // endbuild
 
     // Test snippet
 
