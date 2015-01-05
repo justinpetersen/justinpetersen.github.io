@@ -1,12 +1,23 @@
-requirejs.config
+require.config
+
   baseUrl: './js'
+
+  paths:
+    'backbone': '../components/backbone/backbone'
+    'backbone-babysitter': '../components/backbone.babysitter/lib/backbone.babysitter'
+    'bootstrap-transition': '../components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition'
+    'config': 'app/config/config_base'
+    'domReady': '../components/requirejs-domready/domReady'
+    'jquery': '../components/jquery/jquery'
+    'marionette': '../components/marionette/lib/backbone.marionette'
+    'modernizr': '../components/modernizr/modernizr'
+    'templates': '../templates'
+    'text': '../components/requirejs-text/text'
+    'underscore': '../components/underscore/underscore'
+
   shim:
-    'underscore':
-      exports: '_'
-    'jquery':
-      exports: '$'
     'backbone':
-      deps: ['underscore', 'jquery']
+      deps: ['jquery', 'underscore']
       exports: 'Backbone'
     'bootstrap-modal':
       deps: ['jquery']
@@ -14,56 +25,21 @@ requirejs.config
     'bootstrap-transition':
       deps: ['jquery']
       exports: '$'
+    'marionette':
+      deps: ['backbone']
+      exports: 'Backbone.Marionette'
     'modernizr':
       exports: 'Modernizr'
+    'underscore':
+      exports: '_'
 
-  paths:
-    'underscore': '../components/underscore/underscore'
-    'backbone': '../components/backbone/backbone'
-    'bootstrap-modal': '../components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal'
-    'bootstrap-transition': '../components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition'
-    'jquery': '../components/jquery/jquery'
-    'text': '../components/requirejs-text/text'
-    'domReady': '../components/requirejs-domready/domReady'
-    'modernizr': '../components/modernizr/modernizr'
-    'templates': '../templates'
-    'config': 'app/config/config_base'
+require [
+  'app/PortfolioApplication'
+  'spec/SpecRunner'
+], (PortfolioApplication, SpecRunner) ->
 
-require ['app/vendors'], ->
+  app = new PortfolioApplication()
+  app.initialize()
 
-  require ['app/app', 'jquery'], (App, $) ->
-    App.initialize()
-
-    if window.is_test
-      mocha_div = $('<div />', { id: 'mocha', class: 'mocha' })
-      $('body').prepend(mocha_div)
-
-      $('head').append('<link rel="stylesheet" href="components/mocha/mocha.css">')
-      $('head').append('<link rel="stylesheet" href="runner/test.css">')
-
-      require [
-        '../components/chai/chai'
-        '../components/chai-backbone/chai-backbone'
-        '../components/chai-jquery/chai-jquery'
-        '../components/sinon-chai/lib/sinon-chai'
-      ], (chai, chaiBackbone, chaiJQuery, sinonChai) ->
-
-        unless window.PHANTOMJS
-          mocha.setup
-            ui: 'bdd'
-            bail: false
-            ignoreLeaks: true
-            timeout: 5000
-
-        expect = window.expect = chai.expect
-
-        chai.should()
-        chai.use chaiBackbone
-        chai.use chaiJQuery
-        chai.use sinonChai
-
-        require [
-          'spec/all_tests'
-          '../runner/bridge'
-        ], (runner) ->
-          mocha.run()
+  specRunner = new SpecRunner()
+  specRunner.run()
