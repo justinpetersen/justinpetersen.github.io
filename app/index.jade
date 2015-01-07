@@ -25,12 +25,6 @@ html(class="no-js")
           .close-video-modal-button.hidden-xs
             span.glyphicon.glyphicon-remove
           iframe.vimeo-player(src="//player.vimeo.com/video/84931542?title=0&byline=0&portrait=0&color=ef3f3d", allowfullscreen)
-    .modal.fade#haloReachModal(tabindex="-2", role="dialog", aria-hidden="true")
-      .modal-dialog.modal-lg
-        .video-player-container
-          .close-video-modal-button.hidden-xs
-            span.glyphicon.glyphicon-remove
-          iframe.vimeo-player(src="//player.vimeo.com/video/19136630?title=0&byline=0&portrait=0&color=ef3f3d", allowfullscreen)
 
     .navbar.navbar-fixed-top.navbar-inverse
       .container
@@ -76,7 +70,7 @@ html(class="no-js")
             a(href="http://www.audiusa.com", target="_blank")
               button.btn.btn-xs.btn-danger.icon-button(type="button")
                 img.icon-image(src="images/link-icon.png")
-            a(href="#", data-toggle="modal", data-target="#videoModal")
+            a(href="#", data-toggle="modal", data-target="#videoModal", video-id="84931542")
               button.btn.btn-xs.btn-info.icon-button(type="button")
                 img.icon-image(src="images/video-icon.png")
         .col-xs-12.col-sm-7
@@ -178,7 +172,7 @@ html(class="no-js")
         .col-xs-12.col-sm-5
           img.work-image(src="images/projects/halo-reach.jpg")
           .icons-container
-            a(href="#", data-toggle="modal", data-target="#haloReachModal")
+            a(href="#", data-toggle="modal", data-target="#videoModal", video-id="19136630")
               button.btn.btn-xs.btn-info.icon-button(type="button")
                 img.icon-image(src="images/video-icon.png")
         .col-xs-12.col-sm-7

@@ -1,10 +1,29 @@
 [
   {
+    "image": "images/projects/audi.png",
     "name": "AudiUSA.com",
-    "image": "images/projects/audi.png"
+    "client": "Audi",
+    "agency": "AKQA",
+    "role": "Technical Manager",
+    "tech": "Adobe CQ5, Adobe Scene7, CoffeeScript, Bootstrap, Backbone.js, Jenkins, Predictive Analytics",
+    "description": "I oversaw front end development of the AudiUSA.com site redesign, especially focusing on the car configurator and global UI components. The site is fully responsive and includes several integrations with Audi's global data partners."
   },
   {
+    "image": "https://s-media-cache-ak0.pinimg.com/736x/42/8e/34/428e344039efe2fa105be49b7f4ab54d.jpg",
     "name": "Dance*Cam",
-    "image": "https://s-media-cache-ak0.pinimg.com/736x/42/8e/34/428e344039efe2fa105be49b7f4ab54d.jpg"
+    "client": "Xbox",
+    "agency": "AKQA and Fuzz Productions",
+    "role": "Technical Manager",
+    "tech": "After Effects, Azure, iOS, Android, Windows Phone",
+    "description": "I managed creative development of the Dance*Cam iPhone, Android and Windows Phone 7 app for Dance Central 2. The mobile app ran Adobe After Effects in Microsoft's Azure cloud to add special effects and \"auto-tune\" the user into their very own music video."
+  },
+  {
+    "image": "images/projects/halo-reach.jpg",
+    "name": "Remember Reach",
+    "client": "Xbox",
+    "agency": "AKQA and Autofuss",
+    "role": "Technical Manager",
+    "tech": "Silverlight, C#.NET, After Effects, Kuka Robotics, Live Smooth Streaming Video",
+    "description": "The Halo \"Remember Reach\" site used an automobile assembly robot with a laser pointer to create a monument from 60,000 points of light. Each user could select a single points of light, which would in turn be illuminated by the robot and composited into the scene. The activity of the robot was live-streamed over the website for the duration of the campaign."
   }
 ]

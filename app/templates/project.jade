@@ -8,27 +8,26 @@
             img.icon-image(src="images/video-icon.png")
     .col-xs-12.col-sm-7
       h3 <%= name %>
-      p.body-p.
-        The Halo "Remember Reach" site used an automobile assembly robot with a laser pointer to create a monument from 60,000 points of light. Each user could select a single points of light, which would in turn be illuminated by the robot and composited into the scene. The activity of the robot was live-streamed over the website for the duration of the campaign.
+      p.body-p <%= description %>
       table.table.body-p
         tr
           td
             h5 Client
             p
-              small Xbox
+              small <%= client %>
           td
             h5 Agency
             p
-              small AKQA and Autofuss
+              small <%= agency %>
           td
             h5 Role
             p
-              small Technical Manager
+              small <%= role %>
         tr
           td(colspan="3")
             h5 Technologies
             p
-              small Silverlight, C#.NET, After Effects, Kuka Robotics, Live Smooth Streaming
+              small <%= tech %>
         tr
           td(colspan="3")
             h5 Highlights

@@ -5,6 +5,7 @@ require.config
   paths:
     'backbone': '../components/backbone/backbone'
     'backbone-babysitter': '../components/backbone.babysitter/lib/backbone.babysitter'
+    'bootstrap-modal': '../components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/modal'
     'bootstrap-transition': '../components/bootstrap-sass-official/vendor/assets/javascripts/bootstrap/transition'
     'config': 'app/config/config_base'
     'domReady': '../components/requirejs-domready/domReady'
@@ -34,12 +35,16 @@ require.config
       exports: '_'
 
 require [
-  'app/PortfolioApplication'
+  'app/VideoPlayer'
+  # 'app/PortfolioApplication'
   'spec/SpecRunner'
-], (PortfolioApplication, SpecRunner) ->
+], (VideoPlayer, SpecRunner) ->
 
-  app = new PortfolioApplication()
-  app.initialize()
+  videoPlayer = new VideoPlayer()
+  videoPlayer.initialize()
+
+  # app = new PortfolioApplication()
+  # app.initialize()
 
   specRunner = new SpecRunner()
   specRunner.run()
